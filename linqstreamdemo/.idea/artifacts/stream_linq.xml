@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="stream.linq">
+    <output-path>$PROJECT_DIR$/out/artifacts/stream_linq</output-path>
+    <root id="archive" name="stream.linq.jar">
+      <element id="module-output" name="stream.linq" />
+    </root>
+  </artifact>
+</component>
