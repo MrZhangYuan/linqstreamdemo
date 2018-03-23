@@ -9,10 +9,11 @@ class SelectDemo
         {
                 System.out.println("---------------------------------------SelectDemo Started!---------------------------------------");
 
-                ArrayList<Teacher> testdata = testData.getTeachers(100);
+                ArrayList<Teacher> testteacher = testData.getTeachers(100);
+                ArrayList<Student> teststudent = testData.getStudents(300);
 
 
-                LinqStream.fromIterable(testdata)
+                LinqStream.fromIterable(testteacher)
                         .SELECT
                                 (
                                         _p -> _p.Name
@@ -23,7 +24,7 @@ class SelectDemo
                                 );
 
 
-                LinqStream.fromIterable(testdata)
+                LinqStream.fromIterable(testteacher)
                         .SELECTMANY
                                 (
                                         _p -> _p.Students
@@ -31,8 +32,29 @@ class SelectDemo
                         .SELECT
                                 (
                                         //boxed,age is int
-                                        _p->_p.Age
+                                        _p -> _p.Age
                                 )
+                        .FOREACH
+                                (
+                                        _p -> System.out.println(_p)
+                                );
+
+
+                LinqStream.fromIterable(testteacher)
+                        .SELECTMANY
+                                (
+                                        _p -> LinqStream.fromIterable(_p.Students)
+                                                .SELECTMANY
+                                                        (
+                                                                __p -> __p.Books
+                                                        )
+                                )
+                        //books
+                        .SELECT
+                                (
+                                        _p -> _p.BookName
+                                )
+                        //booknames
                         .FOREACH
                                 (
                                         _p -> System.out.println(_p)
