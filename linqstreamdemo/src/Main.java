@@ -5,7 +5,7 @@ public class Main
         {
                 try
                 {
-                        SelectDemo.run();
+                        SelectWhereDemo.run();
                 }
                 catch(Exception e)
                 {

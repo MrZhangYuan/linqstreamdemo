@@ -923,6 +923,27 @@ public final class LinqStream<T> implements Iterable<T>
                         );
         }
 
+        public  LinqStream<Iterable<T>> FUZZYGROUPING
+                (
+                        Func_T_R<T, String> keyselector,
+                        Func_T_R<T, String> groupkeyselector,
+                        double coefficient
+                )
+                throws Exception
+        {
+                return new LinqStream<>
+                        (
+                                new FuzzyGroupLinqIterator<>
+                                        (
+                                                this.linqIterator,
+                                                keyselector,
+                                                groupkeyselector,
+                                                coefficient
+                                        )
+                        );
+        }
+
+
         public <TKey, TElement, TResult> LinqStream<TResult> GROUPBY
                 (
                         Func_T_R<T, TKey> keySelector,

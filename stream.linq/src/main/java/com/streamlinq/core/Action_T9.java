@@ -1,6 +1,10 @@
 package main.java.com.streamlinq.core;
 
 
+import java.util.ListIterator;
+import java.util.Objects;
+import java.util.function.UnaryOperator;
+
 @FunctionalInterface
 public interface Action_T9<T1, T2, T3, T4, T5, T6, T7, T8, T9>
 {

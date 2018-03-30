@@ -37,14 +37,14 @@ public class TimeSpan
         {
                 String template = "yyyy-MM-dd HH:mm:ss ms us ns";
 
-                return template.replace("yyyy", StringEx.padLeft(yyyy, '0', 4))
-                        .replace("MM", StringEx.padLeft(MM, '0', 2))
-                        .replace("dd", StringEx.padLeft(dd, '0', 2))
-                        .replace("HH", StringEx.padLeft(HH, '0', 2))
-                        .replace("mm", StringEx.padLeft(mm, '0', 2))
-                        .replace("ss", StringEx.padLeft(ss, '0', 2))
-                        .replace("ms", StringEx.padLeft(ms, '0', 4))
-                        .replace("us", StringEx.padLeft(us, '0', 4))
-                        .replace("ns", StringEx.padLeft(ns, '0', 4));
+                return template.replace("yyyy", StringUlitis.padLeft(yyyy, '0', 4))
+                        .replace("MM", StringUlitis.padLeft(MM, '0', 2))
+                        .replace("dd", StringUlitis.padLeft(dd, '0', 2))
+                        .replace("HH", StringUlitis.padLeft(HH, '0', 2))
+                        .replace("mm", StringUlitis.padLeft(mm, '0', 2))
+                        .replace("ss", StringUlitis.padLeft(ss, '0', 2))
+                        .replace("ms", StringUlitis.padLeft(ms, '0', 4))
+                        .replace("us", StringUlitis.padLeft(us, '0', 4))
+                        .replace("ns", StringUlitis.padLeft(ns, '0', 4));
         }
 }
